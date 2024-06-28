@@ -1,12 +1,13 @@
 import React from "react";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Col, Container, Nav, Navbar, Row } from "react-bootstrap";
 import logo from "../assets/logo.png";
+import { IoSearch } from "react-icons/io5";
 
 class NavbarT extends React.Component {
   render() {
     return (
-      <Navbar className="navbar navbarBG border-body" data-bs-theme="dark">
-        <Container>
+      <Container>
+        <Navbar className="navbar navbarBG border-body" data-bs-theme="dark">
           <Navbar.Brand href="#home">
             <img
               src={logo}
@@ -24,9 +25,14 @@ class NavbarT extends React.Component {
             <Nav.Link href="#pricing">Movies</Nav.Link>
             <Nav.Link href="#pricing">Recently Added</Nav.Link>
             <Nav.Link href="#pricing">My List</Nav.Link>
+            <Col className="text-end">
+              <Nav.Link href="#pricing">
+                <IoSearch className="colorIcon" />
+              </Nav.Link>
+            </Col>
           </Nav>
-        </Container>
-      </Navbar>
+        </Navbar>
+      </Container>
     );
   }
 }
