@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardBody, Col, Container, Row } from "react-bootstrap";
+import { Card, Container, Row } from "react-bootstrap";
 
 class SFilm extends React.Component {
   state = {
@@ -9,7 +9,7 @@ class SFilm extends React.Component {
   getMovies = () => {
     fetch("http://www.omdbapi.com/?apikey=be73bcde&s=" + this.props.titolo)
       .then((response) => response.json())
-      .then((objMovies) => this.setState({ filmSection: objMovies.Search }))
+      .then((objMovies) => this.setState({ filmSection: objMovies.Search.slice(0, 6) }))
 
       .catch((error) => console.log("Si è verificato un errore!"));
   };
@@ -21,15 +21,11 @@ class SFilm extends React.Component {
       <Container>
         <Row>
           <h4 className="text-start mt-5 text-light">{this.props.sectionTitle}</h4>
-          <Container className="d-flex">
+          <Container className="d-flex gap-2 ">
             {this.state.filmSection.map((movie) => {
               return (
-                <Card className="m-2">
-                  <Row key={movie.imdbID} sm={2} lg={4} xl={6}>
-                    <Col className="d-flex ">
-                      <img src={movie.Poster} alt={movie.Title} />
-                    </Col>
-                  </Row>
+                <Card key={movie.imdbID} xs={2} md={4}>
+                  <Card.Img src={movie.Poster} alt={movie.Title} />
                 </Card>
               );
             })}
