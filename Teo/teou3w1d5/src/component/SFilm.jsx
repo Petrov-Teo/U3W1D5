@@ -18,17 +18,19 @@ class SFilm extends React.Component {
   }
   render() {
     return (
-      <Container className="d-flex">
-        <Row className="d-flex">
-          <h4 className="text-start mt-5 text-light">Trending Now</h4>
-          <Container className="d-flex movecard">
+      <Container>
+        <Row>
+          <h4 className="text-start mt-5 text-light">{this.props.sectionTitle}</h4>
+          <Container className="d-flex">
             {this.state.filmSection.map((movie) => {
               return (
-                <Row key={movie.imdbID} sm={2} lg={4} xl={6} className="row mb-2">
-                  <Col className="d-flex ">
-                    <img src={movie.Poster} alt={movie.Title} />
-                  </Col>
-                </Row>
+                <Card className="m-2">
+                  <Row key={movie.imdbID} sm={2} lg={4} xl={6}>
+                    <Col className="d-flex ">
+                      <img src={movie.Poster} alt={movie.Title} />
+                    </Col>
+                  </Row>
+                </Card>
               );
             })}
           </Container>

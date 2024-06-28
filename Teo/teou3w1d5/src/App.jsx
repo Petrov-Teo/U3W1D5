@@ -7,9 +7,9 @@ function App() {
   return (
     <div className="App" data-bs-theme="dark">
       <NavbarT />
-      <SFilm titolo="Batman" />
-      <SFilm titolo="The Avengers" />
-      <SFilm titolo="Annabelle" />
+      <SFilm titolo="Batman" sectionTitle="TV Shows" />
+      <SFilm titolo="The Avengers" sectionTitle="Watch it Again" />
+      <SFilm titolo="Annabelle" sectionTitle="New Releases" />
     </div>
   );
 }
