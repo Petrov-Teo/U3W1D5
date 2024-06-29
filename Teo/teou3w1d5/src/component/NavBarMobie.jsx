@@ -1,19 +1,30 @@
-import React from "react";
-import { Container, Nav, Navbar, Row } from "react-bootstrap";
-import logo from "../assets/logo.png";
-import { IoSearch } from "react-icons/io5";
+import { Button, Container, Nav, Navbar, Row } from "react-bootstrap";
+import React, { Component } from "react";
 import { FaRegBell } from "react-icons/fa6";
+import { IoSearch } from "react-icons/io5";
 import { RxAvatar } from "react-icons/rx";
+import logo from "../assets/logo.png";
 
-class NavbarProva extends React.Component {
+class NavbarMobile extends Component {
   render() {
     return (
-      <Container>
+      <Container className="d-md-none ">
         <Row>
           <Navbar className="navbar navbarBG border-body" data-bs-theme="dark">
             <Navbar.Brand href="#home" xs={12}>
               <img src={logo} width="100px" height="55px" className="align-top" alt="React Bootstrap logo" />
             </Navbar.Brand>
+            <Button
+              class="navbar-toggler collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </Button>
             <Nav className="me-auto">
               <Nav.Link href="#home" className="text-white">
                 Home
@@ -41,5 +52,4 @@ class NavbarProva extends React.Component {
     );
   }
 }
-
-export default NavbarProva;
+export default NavbarMobile;

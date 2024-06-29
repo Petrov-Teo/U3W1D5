@@ -24,10 +24,8 @@ class SFilm extends React.Component {
           <Container className="d-flex flex-wrap">
             {this.state.filmSection.map((movie) => {
               return (
-                <Col key={movie.imdbID} xs={12} md={6} lg={3} xxl={2} className="p-2">
-                  <Card>
-                    <Card.Img src={movie.Poster} alt={movie.Title} className="moviecard" />
-                  </Card>
+                <Col key={movie.imdbID} xs={12} md={6} lg={3} xxl={2} className="p-1">
+                  <Card.Img src={movie.Poster} alt={movie.Title} className="moviecard" />
                 </Col>
               );
             })}
