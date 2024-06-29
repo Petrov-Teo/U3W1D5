@@ -1,12 +1,13 @@
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
-import NavbarT from "./component/NavbarT";
+
 import SFilm from "./component/SFilm";
+import NavbarProva from "./component/NavBarProva";
 
 function App() {
   return (
     <div className="App" data-bs-theme="dark">
-      <NavbarT />
+      <NavbarProva />
       <SFilm titolo="Batman" sectionTitle="TV Shows" />
       <SFilm titolo="The Avengers" sectionTitle="Watch it Again" />
       <SFilm titolo="Annabelle" sectionTitle="New Releases" />

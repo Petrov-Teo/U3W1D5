@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Container, Row } from "react-bootstrap";
+import { Card, Col, Container, Row } from "react-bootstrap";
 
 class SFilm extends React.Component {
   state = {
@@ -21,12 +21,14 @@ class SFilm extends React.Component {
       <Container>
         <Row>
           <h4 className="text-start mt-5 text-light">{this.props.sectionTitle}</h4>
-          <Container className="d-flex gap-2 ">
+          <Container className="d-flex flex-wrap">
             {this.state.filmSection.map((movie) => {
               return (
-                <Card key={movie.imdbID} xs={2} md={4}>
-                  <Card.Img src={movie.Poster} alt={movie.Title} />
-                </Card>
+                <Col key={movie.imdbID} xs={12} md={6} lg={3} xxl={2} className="p-2">
+                  <Card>
+                    <Card.Img src={movie.Poster} alt={movie.Title} className="moviecard" />
+                  </Card>
+                </Col>
               );
             })}
           </Container>
