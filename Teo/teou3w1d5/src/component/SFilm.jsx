@@ -16,6 +16,7 @@ class SFilm extends React.Component {
   componentDidMount() {
     this.getMovies();
   }
+
   render() {
     return (
       <Container>
